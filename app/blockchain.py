@@ -137,7 +137,7 @@ class Blockchain:
 
     #hash화 하는 함수
     def hash_function(self, data): 
-        return hashlib.sha256(data.encode('utf-8').strip()).hexdigest()
+        return hashlib.sha256(str(data).encode('utf-8')).hexdigest()
     
     # left,right 노드 받아서 더하고 hash 하는 함수
     def create_merkle_tree_node(self, left, right):
