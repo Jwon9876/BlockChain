@@ -154,11 +154,16 @@ class Blockchain:
             transactions.append(transactions[0])
             new_level = []
             # 0부터 len(tx)까지
-            for i in range(0, len(transactions)): 
-                left = transactions[i]
-                right = transactions[i + 1]
-                new_level.append(self.create_merkle_tree_node(left, right))
+            # for i in range(0, len(transactions)): 
+            #     left = transactions[i]
+            #     right = transactions[i + 1]
+            #     new_level.append(self.create_merkle_tree_node(left, right))
             
+            left = transactions[0]
+            right = transactions[1]
+            new_level.append(self.create_merkle_tree_node(left, right))
+
+
             transactions = new_level
 
             return transactions[0]
