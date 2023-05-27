@@ -151,7 +151,7 @@ class Blockchain:
 
         elif len(transactions) == 1: # 제네시스생성 및 tx가 처음부터 한개일때 (coinbase tx만 있을때)
             #채우시오 : 가장 마지막 tx를 trasactions에 추가
-            transactions.append(transactions[len(transactions) - 1])
+            transactions.append(transactions[-1])
             new_level = []
             # 0부터 len(tx)까지
             for i in range(0, len(transactions), 2): 
